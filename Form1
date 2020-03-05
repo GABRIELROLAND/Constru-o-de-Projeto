@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Model;
+namespace AulaExemplo_20201
+{
+   
+    public partial class Form1 : Form
+        
+    {
+        Pessoa pessoa;
+        public Form1()
+        {
+            InitializeComponent();
+            pessoa=new Pessoa();
+            pessoa.Nome="Gabriel";
+            pessoa.idade=15;
+            
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 login = new Form2();
+            login.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            String texto = String.Format("Nome:{0}/Idade:{1}", pessoa.Nome, pessoa.idade);
+            MessageBox.Show(texto); 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
